@@ -78,7 +78,9 @@
 // // getFun(() => { });
 // getFun((output) => { console.log(output.message); });
 
-// expanded version 
+// =================
+// expanded version of the above solution  
+// =================
 
 const getFun = (arg) => {
     console.log('getFun function called');
