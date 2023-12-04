@@ -70,29 +70,29 @@
 // solution 1 - use callbacks 
 // ========================= 
 
-// const getFun = (arg) => {
-//     setTimeout(() => {
-//         arg({ message: 'Have fun!' }); // function call 
-//     }, 1000);
-// };
-// // getFun(() => { });
-// getFun((output) => { console.log(output.message); });
-
-// =================
-// expanded version of the above solution  
-// =================
-
 const getFun = (arg) => {
-    console.log('getFun function called');
     setTimeout(() => {
         arg({ message: 'Have fun!' }); // function call 
     }, 1000);
 };
 // getFun(() => { });
-getFun((output) => {
-    console.log('callback function called'); 
-    console.log(output.message); 
-});
+getFun((output) => { console.log(output.message); });
+
+// =================
+// expanded version of the above solution  
+// =================
+
+// const getFun = (arg) => {
+//     console.log('getFun function called');
+//     setTimeout(() => {
+//         arg({ message: 'Have fun!' }); // function call 
+//     }, 1000);
+// };
+// // getFun(() => { });
+// getFun((output) => {
+//     console.log('callback function called'); 
+//     console.log(output.message); 
+// });
 
 
 
