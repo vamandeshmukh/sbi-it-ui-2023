@@ -70,13 +70,13 @@
 // solution 1 - use callbacks 
 // ========================= 
 
-const getFun = (arg) => {
-    setTimeout(() => {
-        arg({ message: 'Have fun!' }); // function call 
-    }, 1000);
-};
-// getFun(() => { });
-getFun((output) => { console.log(output.message); });
+// const getFun = (arg) => {
+//     setTimeout(() => {
+//         arg({ message: 'Have fun!' }); // function call 
+//     }, 1000);
+// };
+// // getFun(() => { });
+// getFun((output) => { console.log(output.message); });
 
 // =================
 // expanded version of the above solution  
@@ -95,10 +95,40 @@ getFun((output) => { console.log(output.message); });
 // });
 
 
+// ======================== 
+// Functions and args in JS 
+// ======================== 
+
+// const fun = (a) => {
+//     // let output = a * 2; // a number as arg 
+//     // let output = a.message; // an object as arg 
+//     a(); // function call 
+// };
+
+// // fun(?);
+// // fun(10); // number 
+// fun({ message: 'abc' }); // object 
+// fun(() => { });  // function 
 
 
 
+// const printSquare = (n) => { console.log(n * n); };
+
+// printSquare(2);
+
+// let num = 3;
+// printSquare(num);
 
 
+const fun = (arg) => {
+    console.log('fun function called.')
+    arg(); // function call 
+};
 
+const namedFun = () => {
+    console.log('namedFun function called.');
+};
 
+fun(namedFun);
+
+fun(() => { console.log('anonymous function called.'); });
