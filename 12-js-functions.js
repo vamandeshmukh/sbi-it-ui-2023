@@ -120,15 +120,46 @@
 // printSquare(num);
 
 
+// callback - one function takes another funtion as argument 
+
+// const fun = (arg) => {
+//     console.log('fun function called.')
+//     arg(); // function call 
+// };
+
+// const namedFun = () => {
+//     console.log('namedFun function called.');
+// };
+
+// fun(namedFun);
+
+// fun(() => { console.log('anonymous function called.'); });
+
+
+// callback - callback function having argument 
+
+// const fun = (arg) => {
+//     console.log('fun function called.')
+//     arg('some value'); // function call 
+// };
+
+// fun(
+//     (abc) => {
+//         console.log('anonymous function called.');
+//         console.log(abc);
+//     }
+// );
+
 const fun = (arg) => {
-    console.log('fun function called.')
-    arg(); // function call 
+    console.log('fun function called.');
+    setTimeout(() => {
+        arg('some value'); // function call 
+    }, 2000);
 };
 
-const namedFun = () => {
-    console.log('namedFun function called.');
-};
-
-fun(namedFun);
-
-fun(() => { console.log('anonymous function called.'); });
+fun(
+    (abc) => {
+        console.log('anonymous function called.');
+        console.log(abc);
+    }
+);
